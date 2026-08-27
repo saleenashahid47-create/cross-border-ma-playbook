@@ -88,5 +88,3 @@ with tab4:
         st.info("Utilises automated code-scanning tools alongside legal oversight to flag contaminating copyleft licences hidden within the target's software stack.")
     else:
         st.info("Provides secure digital client portals for real-time status tracking on regulatory filings and condition precedent (CP) satisfaction.")
-
-```

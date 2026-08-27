@@ -1,14 +1,17 @@
 import streamlit as st
+
 # Page Configuration
 st.set_page_config(
     page_title="Cross-Border M&A & Tech Regulation Playbook",
     page_icon="⚖️",
     layout="wide"
 )
+
 # Header Section
 st.title("Cross-Border M&A, Tech Regulation, & ESG Playbook")
 st.subheader("Interactive Digital Compliance & Due Diligence Framework")
 st.markdown("---")
+
 # Sidebar for Navigation
 st.sidebar.header("Deal Parameters")
 deal_value = st.sidebar.slider("Enterprise Value (£M)", 10, 200, 65)
@@ -17,6 +20,7 @@ target_sector = st.sidebar.selectbox(
     ["Advanced Technology & Data Infrastructure", "Standard Commercial Tech", "Clean Energy"]
 )
 jurisdiction = st.sidebar.selectbox("Acquisition Type", ["US to UK Cross-Border", "Domestic UK"])
+
 st.sidebar.markdown("---")
 st.sidebar.info("**Simulated Deal:** Apex Tech Corp acquiring AuraData Ltd.")
 
@@ -39,7 +43,15 @@ with tab1:
         * **(b)** Training data and generative AI datasets have been lawfully acquired in compliance with data protection laws and third-party terms of service.
         * **(c)** No open-source software has been integrated in a manner that triggers mandatory copyleft licensing or public source code disclosure obligations.
         """)
-        with tab2:
+        
+    with st.expander("View: Data Privacy & GDPR Compliance Covenants"):
+        st.markdown("""
+        * **Target Data Practices:** Full audit trail of customer data processing agreements (DPAs) under UK GDPR.
+        * **Cross-Border Transfers:** Verification of Standard Contractual Clauses (SCCs) or UK International Data Transfer Agreements (IDTAs).
+        * **Remediation:** Mandatory pre-closing notification of any unmitigated cyber-security incidents or data breaches over the past 36 months.
+        """)
+
+with tab2:
     st.header("Module 2: Regulatory & FDI Risk Matrix (UK NSI Act 2021)")
     
     if target_sector == "Advanced Technology & Data Infrastructure" and jurisdiction == "US to UK Cross-Border":

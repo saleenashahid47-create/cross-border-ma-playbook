@@ -47,13 +47,13 @@ col_stat2.metric("Bias Vulnerability", "73%", "Unintentional reinforcement of in
 col_stat3.metric("Data Leak Risk", "70%+", "Apps sharing unencrypted third-party data")
 
 # Visual Flow: Corporate Gen AI Risk Lifecycle
-st.markdown("### Flow Chart: The Corporate AI Risk Escalation Cycle")
+st.markdown("### Visual Process: The Corporate AI Risk Escalation Cycle")
 st.info("""
 **[ Profit-Driven Objective ]** ➔ Prioritising speed, automation, and cost reduction over compliance.
    ⬇
 **[ Opaque Training Data ]** ➔ Utilizing unvetted datasets containing hidden historical biases and copyright taints.
    ⬇
-**[ Flawed Deployment ]** ➔ Institutionalizing algorithmic discrimination (e.g. recruitment or lending bias).
+**[ Flawed Deployment ]** ➔ Institutionalizing algorithmic discrimination (e.g., recruitment or lending bias).
    ⬇
 **[ Regulatory Evasion ]** ➔ Shielding DPIAs under trade secret exemptions to bypass external oversight.
    ⬇
@@ -78,26 +78,14 @@ if target_sector == "Advanced Technology & Data Infrastructure" and "Cross-Borde
 else:
     st.success("✅ **Standard Profile:** This deal bypasses mandatory pre-approval under the NSI Act, though voluntary clearance can be sought for regulatory certainty.")
 
-# Visual Flow: EU AI Act Risk Classification Hierarchy
-st.markdown("### Flow Chart: EU AI Act Tiered Classification System")
-st.success("""
-**[ Unacceptable Risk ]** ➔ Manipulative or social scoring systems (Strictly Prohibited)
-   ⬇
-**[ High Risk ]** ➔ Critical infrastructure, biometrics, employment & healthcare AI (Mandatory Conformity Assessment)
-   ⬇
-**[ Limited Risk ]** ➔ Chatbots, deepfakes, and generative text tools (Transparency Requirements)
-   ⬇
-**[ Minimal Risk ]** ➔ Spam filters and inventory management AI (No Specific Obligations)
-""")
-
-st.markdown("### Comparative Regulatory Review Timelines")
-st.write("Working day limits imposed by the Investment Security Unit (ISU) during government national security reviews:")
+st.markdown("### Comparative Regulatory Review Timelines (Area Chart Visualisation)")
+st.write("Cumulative working day impact across ISU review stages:")
 
 timeline_data = pd.DataFrame({
-    'Review Phase': ['Phase 1 Initial Review', 'Phase 2 Extended Review', 'Potential Extension'],
-    'Working Days': [30, 45, 30]
+    'Review Phase': ['Phase 1 Initial', 'Phase 2 Extended', 'Potential Extension'],
+    'Cumulative Working Days': [30, 75, 105]
 })
-st.bar_chart(timeline_data.set_index('Review Phase'))
+st.area_chart(timeline_data.set_index('Review Phase'))
 
 st.markdown("---")
 
@@ -112,38 +100,36 @@ with col_esg2:
     st.markdown("### Social, Governance, and SRA Integrity")
     st.write("Evaluating workforce diversity, supply chain transparency, and modern slavery statements. Solicitors must ensure client statements do not breach Solicitors Regulation Authority principles against misleading the market.")
 
-# Visual Flow: Greenwashing Risk Assessment Pipeline
-st.markdown("### Flow Chart: ESG & Anti-Greenwashing Due Diligence Pipeline")
-st.warning("""
-**[ Marketing Claims Review ]** ➔ Inspecting public-facing sustainability statements and net-zero carbon pledges.
-   ⬇
-**[ Operational Verification ]** ➔ Auditing physical energy consumption, supply chain data, and emissions tracking.
-   ⬇
-**[ Gap Analysis & Discrepancies ]** ➔ Identifying exaggerated green credentials or unverified offset schemes.
-   ⬇
-**[ SRA Compliance Check ]** ➔ Ensuring transaction documents do not expose the firm or client to greenwashing liability.
-""")
+# Interactive Structured Data Table for ESG / Greenwashing Audit Checkpoints
+st.markdown("### Interactive Matrix: ESG Compliance Audit Checkpoints")
+esg_table_data = pd.DataFrame({
+    'Due Diligence Area': ['Environmental Claims', 'Supply Chain Transparency', 'Workforce Diversity', 'SRA Integrity Rules'],
+    'Key Risk Factor': ['Greenwashing / False Net-Zero', 'Modern Slavery & Forced Labour', 'Unbalanced Board Metrics', 'Misleading Market Disclosures'],
+    'Regulatory Standard': ['UK Digital Markets Act / CMA', 'Modern Slavery Act 2015', 'Listing Rules & Quotas', 'SRA Principles 2019']
+})
+st.dataframe(esg_table_data, use_container_width=True)
 
 st.markdown("---")
 
 st.header("4. Legal Tech and Alternative Legal Services (Ashurst Advance Model)")
 st.write("Evaluating how alternative legal service delivery models and automated technology optimize transaction efficiency and document review in corporate acquisitions.")
 
-# Interactive metrics reflecting high-tier academic research
+# Key metrics layout
 col_m1, col_m2, col_m3 = st.columns(3)
 col_m1.metric("Review Speed Increase", "400%", "+4x faster vs manual review")
 col_m2.metric("Document Cost Reduction", "35%", "Average client savings")
 col_m3.metric("Data Accuracy Rate", "98.5%", "NLP extraction benchmark")
 
-st.markdown("### Efficiency Comparison: Traditional Review vs. Legal Tech Workflow")
-st.write("Estimated time allocation across major transaction phases comparing conventional resourcing with an integrated NewLaw approach:")
+st.markdown("### Workflow Efficiency Analysis (Hours Spent per Transaction Phase)")
+st.write("Comparison table detailing time savings achieved through NewLaw integration:")
 
-efficiency_data = pd.DataFrame({
+efficiency_table = pd.DataFrame({
     'Workflow Stage': ['Initial NDA & Due Diligence', 'Contract Discovery & NLP', 'Redacting & Risk Tagging', 'Final Closing Binders'],
     'Traditional Method (Hours)': [120, 250, 90, 40],
-    'Legal Tech / ALSP Method (Hours)': [30, 45, 20, 10]
+    'Legal Tech / ALSP Method (Hours)': [30, 45, 20, 10],
+    'Efficiency Gain (%)': ['75% Saved', '82% Saved', '78% Saved', '75% Saved']
 })
-st.bar_chart(efficiency_data.set_index('Workflow Stage'))
+st.dataframe(efficiency_table, use_container_width=True)
 
 workflow_option = st.selectbox(
     "Select Workflow Technology for Detailed Analysis",

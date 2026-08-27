@@ -39,15 +39,26 @@ Generative artificial intelligence drives commercial efficiency, automates compl
 * **Data Privacy and GDPR Compliance:** Complex deep learning systems make data minimisation difficult to enforce. While Article 35 of the GDPR requires rigorous Data Protection Impact Assessments, companies routinely shield these evaluations under trade secret and intellectual property exemptions, evading external accountability.
 """)
 
-# Visual Graphic / Metrics for AI Risk Distribution
-st.markdown("### Industry Sentiment on Gen AI Deployment Risks")
-st.write("Survey data reflecting IT leader concerns regarding operational generative AI adoption:")
+# Key Statistics Metrics Display
+st.markdown("### Key Industry Statistics: Gen AI Adoption Risks")
+col_stat1, col_stat2, col_stat3 = st.columns(3)
+col_stat1.metric("IT Leader Concern", "79%", "Worried about security & data leaks")
+col_stat2.metric("Bias Vulnerability", "73%", "Unintentional reinforcement of inequalities")
+col_stat3.metric("Data Leak Risk", "70%+", "Apps sharing unencrypted third-party data")
 
-ai_risk_data = pd.DataFrame({
-    'Risk Category': ['Data Security & Privacy Breaks', 'Unintentional Bias & Discrimination', 'Regulatory Non-Compliance', 'Intellectual Property Taints'],
-    'Concern Level (%)': [79, 73, 68, 55]
-})
-st.bar_chart(ai_risk_data.set_index('Risk Category'))
+# Visual Flow: Corporate Gen AI Risk Lifecycle
+st.markdown("### Flow Chart: The Corporate AI Risk Escalation Cycle")
+st.info("""
+**[ Profit-Driven Objective ]** ➔ Prioritising speed, automation, and cost reduction over compliance.
+   ⬇
+**[ Opaque Training Data ]** ➔ Utilizing unvetted datasets containing hidden historical biases and copyright taints.
+   ⬇
+**[ Flawed Deployment ]** ➔ Institutionalizing algorithmic discrimination (e.g. recruitment or lending bias).
+   ⬇
+**[ Regulatory Evasion ]** ➔ Shielding DPIAs under trade secret exemptions to bypass external oversight.
+   ⬇
+**[ Societal Harms & Liability ]** ➔ Severe consumer harm, data breaches, and downstream buyer legal exposure.
+""")
 
 st.markdown("---")
 
@@ -66,6 +77,18 @@ if target_sector == "Advanced Technology & Data Infrastructure" and "Cross-Borde
     st.error("🚨 **Mandatory Notification Required:** Under the National Security and Investment Act 2021, cross-border acquisitions in sensitive technology sectors require prior government clearance. Closing without approval is legally void.")
 else:
     st.success("✅ **Standard Profile:** This deal bypasses mandatory pre-approval under the NSI Act, though voluntary clearance can be sought for regulatory certainty.")
+
+# Visual Flow: EU AI Act Risk Classification Hierarchy
+st.markdown("### Flow Chart: EU AI Act Tiered Classification System")
+st.success("""
+**[ Unacceptable Risk ]** ➔ Manipulative or social scoring systems (Strictly Prohibited)
+   ⬇
+**[ High Risk ]** ➔ Critical infrastructure, biometrics, employment & healthcare AI (Mandatory Conformity Assessment)
+   ⬇
+**[ Limited Risk ]** ➔ Chatbots, deepfakes, and generative text tools (Transparency Requirements)
+   ⬇
+**[ Minimal Risk ]** ➔ Spam filters and inventory management AI (No Specific Obligations)
+""")
 
 st.markdown("### Comparative Regulatory Review Timelines")
 st.write("Working day limits imposed by the Investment Security Unit (ISU) during government national security reviews:")
@@ -88,6 +111,18 @@ with col_esg1:
 with col_esg2:
     st.markdown("### Social, Governance, and SRA Integrity")
     st.write("Evaluating workforce diversity, supply chain transparency, and modern slavery statements. Solicitors must ensure client statements do not breach Solicitors Regulation Authority principles against misleading the market.")
+
+# Visual Flow: Greenwashing Risk Assessment Pipeline
+st.markdown("### Flow Chart: ESG & Anti-Greenwashing Due Diligence Pipeline")
+st.warning("""
+**[ Marketing Claims Review ]** ➔ Inspecting public-facing sustainability statements and net-zero carbon pledges.
+   ⬇
+**[ Operational Verification ]** ➔ Auditing physical energy consumption, supply chain data, and emissions tracking.
+   ⬇
+**[ Gap Analysis & Discrepancies ]** ➔ Identifying exaggerated green credentials or unverified offset schemes.
+   ⬇
+**[ SRA Compliance Check ]** ➔ Ensuring transaction documents do not expose the firm or client to greenwashing liability.
+""")
 
 st.markdown("---")
 

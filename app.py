@@ -111,43 +111,45 @@ st.dataframe(esg_table_data, use_container_width=True)
 
 st.markdown("---")
 
-st.header("4. Legal Tech and Alternative Legal Services (Ashurst Advance Model)")
-st.write("Evaluating how alternative legal service delivery models and automated technology optimize transaction efficiency and document review in corporate acquisitions.")
+# --- HEAVILY EXPANDED MODULE 4 BELOW ---
 
-# Key metrics layout
+st.header("4. Legal Tech and Alternative Legal Services (Ashurst Advance Model)")
+st.write("""
+Evaluating how NewLaw delivery models, captive LPOs (Legal Process Outsourcing), and AI-augmented workflows fundamentally restructure high-stakes transaction economics, efficiency, and risk management. 
+""")
+
+# Key Performance Metrics Columns
 col_m1, col_m2, col_m3 = st.columns(3)
 col_m1.metric("Review Speed Increase", "400%", "+4x faster vs manual review")
 col_m2.metric("Document Cost Reduction", "35%", "Average client savings")
 col_m3.metric("Data Accuracy Rate", "98.5%", "NLP extraction benchmark")
 
-st.markdown("### Workflow Efficiency Analysis (Hours Spent per Transaction Phase)")
-st.write("Comparison table detailing time savings achieved through NewLaw integration:")
+st.markdown("### Efficiency Delta: Traditional Resourcing vs. ALSP Workflow")
+st.write("Comparative analysis of lawyer-hour allocation across key transaction workstreams:")
 
-efficiency_table = pd.DataFrame({
-    'Workflow Stage': ['Initial NDA & Due Diligence', 'Contract Discovery & NLP', 'Redacting & Risk Tagging', 'Final Closing Binders'],
-    'Traditional Method (Hours)': [120, 250, 90, 40],
-    'Legal Tech / ALSP Method (Hours)': [30, 45, 20, 10],
-    'Efficiency Gain (%)': ['75% Saved', '82% Saved', '78% Saved', '75% Saved']
+# New Comparative Bar Chart
+efficiency_bar_data = pd.DataFrame({
+    'Workflow Stage': ['Initial Diligence', 'Contract Review', 'Risk Reporting', 'Closing Binders'],
+    'Traditional (Hours)': [120, 250, 90, 40],
+    'NewLaw / ALSP (Hours)': [30, 45, 20, 10]
 })
-st.dataframe(efficiency_table, use_container_width=True)
+st.bar_chart(efficiency_bar_data.set_index('Workflow Stage'))
 
-workflow_option = st.selectbox(
-    "Select Workflow Technology for Detailed Analysis",
-    ["Automated Contract Review & NLP", "Open-Source Code Vulnerability Auditing", "Client Collaboration Portals"]
-)
+st.markdown("""
+### Strategic Deep Dive: The NewLaw Economic Model in M&A
+Traditional law firm economics rely on leverage pyramids (partners : associates) and billable hours, creating a misalignment where efficiency reduces revenue. The 'Ashurst Advance' model decouples revenue from labour hours by deploying tech-enabled managed legal services (MLS).
 
-if workflow_option == "Automated Contract Review & NLP":
-    st.markdown("""
-    **Academic Analysis:** 
-    Natural language processing tools scan hundreds of commercial agreements concurrently. Instead of junior lawyers manually reading boilerplate text, algorithms flag change-of-control triggers, hidden liabilities, and unusual indemnities rapidly, transforming review bottlenecks into structured data assets.
-    """)
-elif workflow_option == "Open-Source Code Vulnerability Auditing":
-    st.markdown("""
-    **Academic Analysis:** 
-    Static application security testing software parses the target company's codebase to expose hidden open-source dependencies and dangerous copyleft licence infections prior to contract exchange, protecting the buyer from acquiring tainted proprietary assets.
-    """)
-else:
-    st.markdown("""
-    **Academic Analysis:** 
-    Secure digital workspaces allow multi-jurisdictional legal teams, accountants, and client executives to track conditions precedent and manage closing checklists in real time, eliminating version control errors across complex cross-border transactions.
-    """)
+This shift is critical for final-year students to grasp:
+1.  **Workflow Unbundling:** High-value strategic advice remains with senior partners, while high-volume, process-driven tasks (e.g., large-scale NDA review, vendor contract due diligence) are 'unbundled' and shifted to tech hubs or ALSP partners.
+2.  **AI-Augmented Economics:** Modern NLP tools don't just read contracts faster; they structure unstructured data. This transforms diligence from a sluggish cost center into a high-speed data asset that informs valuation and SPA negotiations in real-time.
+3.  **Alternative Fee Arrangements (AFAs):** Because costs are predictable under an ALSP model, firms can offer fixed-fee or capped-fee arrangements for diligence, providing clients (like Apex Tech Corp) with greater budget certainty in cross-border contexts.
+""")
+
+# Interactive Data Table: NewLaw / Legal Tech Deep-Dive Matrix
+st.markdown("### Interactive Workflow Technology Matrix")
+tech_table_data = pd.DataFrame({
+    'Technology / Model': ['Natural Language Processing (NLP)', 'Source Code Scanning Tools', 'Collaborative Deal Rooms', 'Managed Legal Services (MLS)'],
+    'Primary M&A Function': ['Automated Contract Review & Data Extraction', 'Open-Source / Copyleft Licence Audit', 'Real-Time Conditions Precedent (CP) Tracking', 'Centralised Process & Resource Management'],
+    'Key Benefit to Acquirer': ['Identifies hidden liabilities/caps (e.g., change-of-control clauses) in minutes rather than weeks.', 'Prevents catastrophic loss of IP value pre-closing by flagging tainted proprietary assets.', 'Eliminates version control errors and email bottlenecks across multi-jurisdictional deal teams.', 'Lowers overall transaction execution cost while accelerating velocity to completion (signing).']
+})
+st.dataframe(tech_table_data, use_container_width=True)

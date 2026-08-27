@@ -9,11 +9,11 @@ st.set_page_config(
 
 # Header Section
 st.title("Cross-Border M&A, Tech Regulation, & ESG Playbook")
-st.subheader("Comprehensive Digital Compliance, Due Diligence & Transaction Framework")
+st.subheader("Transaction Compliance & Due Diligence Framework")
 st.markdown("---")
 
 # Sidebar for Navigation & Deal Parameters
-st.sidebar.header("Deal Parameters & Configuration")
+st.sidebar.header("Deal Parameters")
 deal_value = st.sidebar.slider("Enterprise Value (£M)", 10, 500, 120)
 target_sector = st.sidebar.selectbox(
     "Target Sector",
@@ -22,75 +22,79 @@ target_sector = st.sidebar.selectbox(
 jurisdiction = st.sidebar.selectbox("Acquisition Type", ["US to UK Cross-Border", "Domestic UK", "EU to UK Cross-Border"])
 
 st.sidebar.markdown("---")
-st.sidebar.info("**Active Transaction Profile:** Apex Tech Corp acquiring AuraData Ltd. (£120M valuation framework).")
+st.sidebar.info("**Active Deal:** Apex Tech Corp buying AuraData Ltd. (£120M valuation).")
 
-# Main Content Sections (Stacked fully open for maximum visibility)
+# Main Content Sections
 
-st.header("1. Advanced Technology & Artificial Intelligence Governance")
-st.write(f"Comprehensive structural assessment and risk mitigation matrix tailored for a £{deal_value}M cross-border technology acquisition.")
+st.header("1. Technology and Artificial Intelligence Governance")
+st.write(f"Key legal issues for IP and AI compliance in a £{deal_value}M tech acquisition under English law.")
 
 st.markdown("""
-### Proprietary Software & Machine Learning Model Warranties
-* **Algorithmic Integrity & Ownership:** The Target represents, warrants, and undertakes that all proprietary software code, machine learning architectures, neural network weights, and commercial algorithms are exclusively owned free and clear of all liens, encumbrances, or adverse claims, or are exploited under valid, un-breached commercial licenses.
-* **Generative AI & Training Data Provenance:** All training datasets, LLM fine-tuning corpora, and synthetic data streams utilized by the Target have been lawfully acquired and processed in strict compliance with applicable data protection laws, intellectual property rights, and third-party terms of service, insulating the buyer from downstream copyright infringement liability.
-* **Open-Source Software (OSS) Contamination Audit:** The Target has conducted a comprehensive source code audit confirming that no copyleft or viral open-source software (such as GPL v3 or AGPL) has been integrated into proprietary commercial products in a manner that triggers mandatory source code disclosure or public licensing obligations.
+### Intellectual Property and Software Ownership
+When buying a tech company, the main priority is making sure they actually own their software code and algorithms rather than relying on weak licences. Buyers must check that developers have signed proper assignment agreements so the company holds clear title. 
+
+### Artificial Intelligence and Data Provenance
+Generative AI models create legal risks if they are trained on copyrighted material without permission. Legal teams need to verify where the training data came from. If the target company used data unlawfully, the buyer could face copyright claims after the deal closes.
+
+### Open-Source Software Risks
+Developers often use open-source code to save time. However, some open-source licences have viral terms that force companies to make their own proprietary source code public. Due diligence must identify any risky code before contracts are exchanged.
 """)
 
 st.markdown("""
-### Data Privacy, Cyber-Security & Cross-Border Transfers
-* **GDPR & Data Protection Compliance:** Complete verification of historical and active Data Processing Agreements (DPAs) across all customer and vendor touchpoints, establishing a fully auditable compliance trail under the UK GDPR and Data Protection Act 2018.
-* **International Data Transfer Mechanisms:** Audit of cross-border data flows between UK operations, US parent entities, and offshore cloud servers, validated through Standard Contractual Clauses (SCCs) and UK International Data Transfer Agreements (IDTAs) alongside robust Supplementary Measures.
-* **Cyber-Security Incident Remediation:** Mandatory pre-closing disclosure framework documenting any unmitigated network vulnerabilities, ransomware events, or data security breaches occurring within the preceding 36 months, backed by specific escrow holdbacks for post-closing remediation.
+### Data Protection and Cyber Security
+* **GDPR Compliance:** The target must show a clear record of data processing agreements and compliance with the UK GDPR.
+* **International Transfers:** If data moves between the UK, US, and foreign cloud servers, valid transfer mechanisms like UK IDTAs must be in place.
+* **Past Breaches:** Any major cyber security incidents or data leaks from the last three years need to be declared, with money held back in escrow to cover potential fallout.
 """)
 
 st.markdown("---")
 
-st.header("2. Regulatory & Foreign Direct Investment (FDI) Risk Matrix")
+st.header("2. National Security and Foreign Direct Investment (FDI)")
 
 if target_sector == "Advanced Technology & Data Infrastructure" and "Cross-Border" in jurisdiction:
-    st.error("🚨 **CRITICAL: Mandatory Notification Triggered Under the National Security and Investment (NSI) Act 2021.**\n\nBecause this transaction involves a sensitive sector (Advanced Technology / Data Infrastructure) combined with a foreign cross-border acquirer, mandatory prior clearance from the UK Government's Investment Security Unit (ISU) is legally required before completion. **Executing closing actions without formal clearance renders the transaction legally void and exposes directors to severe civil and criminal penalties.**")
+    st.error("🚨 **Mandatory Notification Required:** Under the National Security and Investment Act 2021, foreign takeovers of sensitive tech sectors need clearance before completion. Closing the deal without government approval makes the transaction legally void.")
 else:
-    st.success("✅ **Standard Notification Profile:** Transaction falls outside mandatory pre-approval triggers under the NSI Act 2021, though voluntary notification pathways remain open to achieve legal certainty.")
+    st.success("✅ **Standard Profile:** This deal does not trigger mandatory pre-approval under the NSI Act, though voluntary clearance can be sought for legal certainty.")
 
 st.markdown("""
-### Statutory Review Timelines, Call-In Powers & Execution Strategy
-* **Phase 1 Initial Review Period:** 30 working days from the formal government acceptance date of the mandatory filing notice within the Investment Security Unit (ISU).
-* **Phase 2 Extended Review (Call-In Notice):** Up to an additional 45 working days if national security risks are identified, with a potential further 30-day voluntary extension window.
-* **Transaction Structuring & SPA Risk Allocation:** The Sale and Purchase Agreement (SPA) must integrate bespoke Long Stop Dates, regulatory condition precedent (CP) clauses, and explicit allocation of compliance burdens and remedies demanded by the Secretary of State.
+### Statutory Review Timelines and Deal Execution
+* **Initial Review:** The government Investment Security Unit has 30 working days to review a mandatory filing.
+* **Extended Review:** If national security concerns arise, the review can be extended by another 45 working days.
+* **Contract Protection:** The Sale and Purchase Agreement must include flexible long stop dates and clear rules on who pays if government remedies delay the timetable.
 """)
 
 st.markdown("---")
 
-st.header("3. ESG Due Diligence & Anti-Greenwashing Compliance")
+st.header("3. ESG Due Diligence and Anti-Greenwashing")
 
 col1, col2 = st.columns(2)
 with col1:
-    st.markdown("### Environmental (E) & UN SDG Alignment")
-    st.write("Rrigorous vetting of corporate sustainability disclosures, carbon-offset claims, and net-zero commitments against physical operational realities (supporting UN SDG 12). Mitigating severe reputational and regulatory exposure arising from potential greenwashing violations.")
+    st.markdown("### Environmental Due Diligence")
+    st.write("Checking whether corporate sustainability claims and net-zero targets match reality. Exaggerated eco-friendly marketing creates severe reputational damage and regulatory liability under UK consumer protection laws.")
 
 with col2:
-    st.markdown("### Social & Governance (S & G) Oversight")
-    st.write("Evaluating workforce diversity metrics, supply chain human rights compliance, modern slavery transparency statements, and executive governance structures to ensure strict alignment with modern institutional investment standards.")
+    st.markdown("### Social and Governance Standards")
+    st.write("Reviewing workforce diversity, modern slavery statements, and supply chain ethics to ensure the business meets the standards expected by institutional investors and lenders.")
 
+<br>
 st.markdown("""
-### SRA Regulatory Alignment & Integrity Risk Management
-* **SRA Principles & Integrity:** Ensuring that all marketing materials, public-facing ESG reports, and technological capability claims made by the Target do not mislead commercial markets or breach professional regulatory integrity principles.
-* **Climate-Related Financial Disclosures:** Alignment with mandatory UK climate disclosure rules for large private companies, assessing climate transition risks embedded in physical data centers and software infrastructure portfolios.
+### SRA Integrity and Regulatory Alignment
+Solicitors must ensure that corporate statements made during the deal do not mislead the market. Under SRA principles, lawyers cannot act in transactions where client claims cross the line into greenwashing or fraud.
 """)
 
 st.markdown("---")
 
-st.header("4. 'Ashurst Advance' Legal Tech & Due Diligence Optimization Note")
-st.write("Streamlining transaction execution velocity and lowering transaction overhead through advanced Alternative Legal Service Delivery (ALSD) frameworks.")
+st.header("4. Legal Tech and Due Diligence Optimisation")
+st.write("Using alternative legal service delivery models to handle large volumes of contract review efficiently.")
 
 workflow_option = st.selectbox(
-    "Select Workflow Technology Integration",
-    ["Automated Contract Review & NLP Extraction", "Open-Source Code Vulnerability Audit", "Secure Client Collaboration & CP Portals"]
+    "Select Workflow Technology",
+    ["Automated Contract Review", "Open-Source Code Audit", "Client Collaboration Portals"]
 )
 
-if workflow_option == "Automated Contract Review & NLP Extraction":
-    st.info("**Deployment Note:** Utilizes advanced Natural Language Processing (NLP) models to parse thousands of historical commercial agreements simultaneously, instantly flagging change-of-control triggers, hidden IP indemnities, assignment restrictions, and unusual liability caps.")
-elif workflow_option == "Open-Source Code Vulnerability Audit":
-    st.info("**Deployment Note:** Integrates automated static application security testing (SAST) and software composition analysis (SCA) code-scanning tools alongside expert legal review to isolate license contamination risks before signing.")
+if workflow_option == "Automated Contract Review":
+    st.info("Natural language processing tools scan hundreds of commercial agreements quickly to find change-of-control clauses, hidden liabilities, and unusual indemnities.")
+elif workflow_option == "Open-Source Code Audit":
+    st.info("Automated code scanning software works alongside lawyer oversight to flag licensing risks in the software stack before completion.")
 else:
-    st.info("**Deployment Note:** Deploys encrypted, real-time digital workspace portals to manage conditions precedent (CP) satisfaction, document execution trackers, and closing binders seamlessly across multi-jurisdictional deal teams.")
+    st.info("Secure online workspaces allow multi-jurisdictional legal teams to track conditions precedent and manage closing documents in real time.")

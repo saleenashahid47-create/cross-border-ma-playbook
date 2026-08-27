@@ -76,7 +76,6 @@ with col2:
     st.markdown("### Social and Governance Standards")
     st.write("Reviewing workforce diversity, modern slavery statements, and supply chain ethics to ensure the business meets the standards expected by institutional investors and lenders.")
 
-<br>
 st.markdown("""
 ### SRA Integrity and Regulatory Alignment
 Solicitors must ensure that corporate statements made during the deal do not mislead the market. Under SRA principles, lawyers cannot act in transactions where client claims cross the line into greenwashing or fraud.
